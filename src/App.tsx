@@ -3,7 +3,7 @@ import { routeTree } from "./routeTree.gen";
 
 import { HeroUIProvider } from "@heroui/react";
 
-import "./App.css";
+import "@/styles/global.css";
 
 const router = createRouter({ routeTree });
 
