@@ -1,0 +1,15 @@
+.tanstack
+dist
+node_modules
+.vscode
+.env
+.env.example
+*.log
+*.lock
+*.tmp
+*.bak
+*.swp
+.DS_Store
+.idea
+build
+coverage
