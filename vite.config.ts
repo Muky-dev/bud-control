@@ -11,8 +11,8 @@ export default defineConfig({
       target: "react",
       autoCodeSplitting: true,
     }),
-    tailwindcss(),
     react(),
+    tailwindcss(),
   ],
   resolve: {
     alias: {
