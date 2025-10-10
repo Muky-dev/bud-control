@@ -1,18 +1,24 @@
 import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/navbar";
 
 const RootLayout = () => (
   <>
-    <div className="p-2 flex gap-2">
-      <Link to="/" className="[&.active]:font-bold">
-        Home
-      </Link>{" "}
-      <Link to="/shortcuts" className="[&.active]:font-bold">
-        Shortcuts
-      </Link>
-      <Link to="/settings" className="[&.active]:font-bold">
-        Settings
-      </Link>
-    </div>
+    <Navbar>
+      <NavbarBrand>
+        <p>Bud Control</p>
+      </NavbarBrand>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem>
+          <Link to="/">Home</Link>
+        </NavbarItem>
+        <NavbarItem isActive>
+          <Link to="/shortcuts">Shortcuts</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link to="/settings">Settings</Link>
+        </NavbarItem>
+      </NavbarContent>
+    </Navbar>
     <Outlet />
   </>
 );
