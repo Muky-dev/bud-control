@@ -20,7 +20,7 @@ export const AppNavbar = () => {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <p>Bud Control</p>
+          <p className="font-bold text-inherit">Bud Control</p>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
