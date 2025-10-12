@@ -24,10 +24,10 @@ export const AppNavbar = () => {
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
+        <NavbarItem isActive>
           <Link to="/">Home</Link>
         </NavbarItem>
-        <NavbarItem isActive>
+        <NavbarItem>
           <Link to="/shortcuts">Shortcuts</Link>
         </NavbarItem>
         <NavbarItem>
