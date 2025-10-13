@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "bud-control",
   "version": "0.1.0",
-  "identifier": "com.budcontrol.app",
+  "identifier": "com.budcontrol",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:5173",
