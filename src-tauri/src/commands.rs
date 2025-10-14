@@ -4,17 +4,17 @@ use std::time::Duration;
 use tokio::time;
 
 #[tauri::command]
-pub fn trigger_default() {
+pub fn trigger_default_audio_mode() {
   println!("Triggering default audio profile...");
 }
 
 #[tauri::command]
-pub fn trigger_anc() {
+pub fn trigger_anc_audio_mode() {
   println!("Triggering active noise cancellation...");
 }
 
 #[tauri::command]
-pub fn trigger_transparency() {
+pub fn trigger_transparency_audio_mode() {
   println!("Triggering transparency mode...");
 }
 
