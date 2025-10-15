@@ -1,20 +1,22 @@
-import { useEffect } from "react";
 import { BudModesRadioGroup } from "@/components/ui/BudModesRadioGroup";
-import { DeviceCard } from "@/components/ui/DeviceCard";
+import { BleDeviceCard } from "@/components/ui/BleDeviceCard";
 import { createFileRoute } from "@tanstack/react-router";
-import { invoke } from "@tauri-apps/api/core";
+import { useBluetoothDevices } from "@/hooks/useBluetoothDevices";
+import { BleDevicesList } from "@/components/ui/BleDevicesList";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
 function Index() {
-  useEffect(() => {
-    invoke("discover_audio_devices");
-  }, []);
+  const { devices, loading: loadingDevices } = useBluetoothDevices({
+    refetchIntervalMs: 10000,
+  });
+
   return (
     <div className="flex flex-col p-4 gap-4 min-h-full justify-between">
-      <DeviceCard />
+      <BleDevicesList devices={devices} isLoading={loadingDevices} />
+      <BleDeviceCard />
       <BudModesRadioGroup />
     </div>
   );
