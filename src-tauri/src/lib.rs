@@ -13,7 +13,13 @@ pub fn run() {
       }
       Ok(())
     })
-    .invoke_handler(tauri::generate_handler![commands::discover_audio_devices])
+    .invoke_handler(tauri::generate_handler![
+      commands::discover_audio_devices,
+      commands::retrieve_services_and_characteristics,
+      commands::trigger_default_audio_mode,
+      commands::trigger_anc_audio_mode,
+      commands::trigger_transparency_audio_mode,
+    ])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }
