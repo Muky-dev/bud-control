@@ -29,13 +29,13 @@ export const BleDevicesList: FC<BleDevicesListProps> = ({
           size="sm"
         />
       </div>
-      <div className="flex w-full gap-2 flex-wrap">
+      <div className="grid grid-cols-3 gap-2 w-full">
         {devices ? (
           devices.map((device) => {
             return (
               <Card
                 key={device.id}
-                className="border border-gray-800 p-2 flex-1 rounded-lg bg-gray900"
+                className="border border-gray-800 p-2 rounded-lg bg-gray900"
               >
                 <CardHeader>
                   <h3>{device.name}</h3>
