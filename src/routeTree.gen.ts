@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ShortcutsRouteImport } from './routes/shortcuts'
 import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as DevicesRouteImport } from './routes/devices'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ShortcutsRoute = ShortcutsRouteImport.update({
@@ -23,6 +24,11 @@ const SettingsRoute = SettingsRouteImport.update({
   path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DevicesRoute = DevicesRouteImport.update({
+  id: '/devices',
+  path: '/devices',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/devices': typeof DevicesRoute
   '/settings': typeof SettingsRoute
   '/shortcuts': typeof ShortcutsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/devices': typeof DevicesRoute
   '/settings': typeof SettingsRoute
   '/shortcuts': typeof ShortcutsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/devices': typeof DevicesRoute
   '/settings': typeof SettingsRoute
   '/shortcuts': typeof ShortcutsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/settings' | '/shortcuts'
+  fullPaths: '/' | '/devices' | '/settings' | '/shortcuts'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/settings' | '/shortcuts'
-  id: '__root__' | '/' | '/settings' | '/shortcuts'
+  to: '/' | '/devices' | '/settings' | '/shortcuts'
+  id: '__root__' | '/' | '/devices' | '/settings' | '/shortcuts'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DevicesRoute: typeof DevicesRoute
   SettingsRoute: typeof SettingsRoute
   ShortcutsRoute: typeof ShortcutsRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/devices': {
+      id: '/devices'
+      path: '/devices'
+      fullPath: '/devices'
+      preLoaderRoute: typeof DevicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DevicesRoute: DevicesRoute,
   SettingsRoute: SettingsRoute,
   ShortcutsRoute: ShortcutsRoute,
 }

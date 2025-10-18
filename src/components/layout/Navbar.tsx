@@ -28,6 +28,9 @@ export const AppNavbar = () => {
           <Link to="/">Home</Link>
         </NavbarItem>
         <NavbarItem>
+          <Link to="/devices">Devices</Link>
+        </NavbarItem>
+        <NavbarItem>
           <Link to="/shortcuts">Shortcuts</Link>
         </NavbarItem>
         <NavbarItem>
@@ -38,7 +41,10 @@ export const AppNavbar = () => {
         <NavbarItem>
           <Link to="/">Home</Link>
         </NavbarItem>
-        <NavbarItem isActive>
+        <NavbarItem>
+          <Link to="/devices">Devices</Link>
+        </NavbarItem>
+        <NavbarItem>
           <Link to="/shortcuts">Shortcuts</Link>
         </NavbarItem>
         <NavbarItem>
